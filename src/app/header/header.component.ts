@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  templateUrl: './header.component.html'
 })
-export class HeaderComponent implements OnInit {
-  collapsed = true;
+export class HeaderComponent {
+  @Output('navClicked') navClicked = new EventEmitter <{typeClicked: string}>();
 
-  constructor() { }
-
-  ngOnInit(): void {
+  GoToRecipes(){
+    this.navClicked.emit({typeClicked: 'recipesClicked'})
+  }
+  GoToShoppingList(){
+    this.navClicked.emit({typeClicked: 'shoppingListClicked'})
   }
 
 }
