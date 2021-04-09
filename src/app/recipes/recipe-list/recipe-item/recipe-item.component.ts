@@ -14,6 +14,6 @@ export class RecipeItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  @Input('recipe') recipe: Recipe; 
+  @Input('oneRecipe') recipe: Recipe; 
 
 }

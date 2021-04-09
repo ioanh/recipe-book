@@ -6,12 +6,13 @@
 <hr>
 <div class="row">
   <div class="col-xs-12">
-    <a
+    <app-recipe-item
       href="#"
       class="list-group-item clearfix"
-      *ngFor="let recipe of recipes" [recipe]="recipe">
+      *ngFor="let recipe of recipes" [oneRecipe]="recipe">
 
-    </a>
+
+    </app-recipe-item>
     <app-recipe-item></app-recipe-item>
   </div>
 </div>
