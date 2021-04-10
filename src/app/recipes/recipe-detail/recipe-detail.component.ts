@@ -13,6 +13,7 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit() {
   }
 
-  @Input('recipe') recipe: Object;
+  @Input('recipe') recipe: Recipe;
+
   
 }

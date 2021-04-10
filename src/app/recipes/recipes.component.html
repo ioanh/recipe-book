@@ -2,7 +2,8 @@
   <div class="col-md-5">
     <app-recipe-list (recipeSelected)="recipeWasSelected($event)"></app-recipe-list>
   </div>
-  <div class="col-md-7">
-    <app-recipe-detail></app-recipe-detail>
+  <div class="col-md-7"> 
+    <!-- *TODO PASS THE SELCTED RECIPE ON THE APP RECIE DETAIL AND SHOW IT -->
+    <app-recipe-detail [recipe]="recipeSelectedThatWasSelected"></app-recipe-detail>
   </div>
 </div>

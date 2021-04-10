@@ -16,7 +16,6 @@ export class RecipesComponent implements OnInit {
   recipeSelectedThatWasSelected: Recipe;
   recipeWasSelected(recipe){
     this.recipeSelectedThatWasSelected = recipe
-    console.log(recipe)
+    console.log(this.recipeSelectedThatWasSelected)
     }
-
 }
