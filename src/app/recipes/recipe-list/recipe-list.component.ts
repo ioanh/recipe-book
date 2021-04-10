@@ -19,14 +19,12 @@ export class RecipeListComponent implements OnInit {
   }
 
 
-  @Output('recipeSelected') recipeSelected = new EventEmitter<{selectedRecipe: Recipe}>();
+  @Output('recipeSelected') recipeSelected = new EventEmitter<Recipe>();
 
 
   recipeGot(data: Recipe){
 
-    this.recipeSelected.emit({
-      selectedRecipe: data
-    })
+    this.recipeSelected.emit(data)
   }
 
 }

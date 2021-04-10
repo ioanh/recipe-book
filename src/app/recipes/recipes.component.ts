@@ -13,10 +13,10 @@ export class RecipesComponent implements OnInit {
   ngOnInit() {
   }
 
-  recipeSelected: Recipe;
+  recipeSelectedThatWasSelected: Recipe;
   recipeWasSelected(recipe){
-    this.recipeSelected = recipe;
-    console.log(this.recipeSelected);
-  }
+    this.recipeSelectedThatWasSelected = recipe
+    console.log(recipe)
+    }
 
 }

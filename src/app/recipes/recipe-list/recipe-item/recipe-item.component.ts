@@ -15,13 +15,13 @@ export class RecipeItemComponent implements OnInit {
   }
 
   @Input('oneRecipe') recipe: Recipe; 
-  @Output('recipeSelected') recipeSent = new EventEmitter<{selectedRecipe: Recipe}>();
+  @Output('recipeSelected') recipeSent = new EventEmitter<Recipe>();
 
 
   recipeClicked(){
-    this.recipeSent.emit({
-      selectedRecipe: this.recipe
-    })
+    this.recipeSent.emit(
+     this.recipe
+    )
   }
 
 }
