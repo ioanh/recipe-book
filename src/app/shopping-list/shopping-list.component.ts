@@ -10,19 +10,14 @@ import { ShoppingListSerivce } from './shopping-list.service';
   providers: [ShoppingListSerivce]
 })
 export class ShoppingListComponent implements OnInit {
-  ingredients: Ingredient[] = [
-    new Ingredient('Apples', 5),
-    new Ingredient('Tomatoes', 10),
-  ];
 
-  constructor() { }
+  constructor(private shoppingListService: ShoppingListSerivce) { }
+
+  ingredients: Ingredient [] = [];
 
   ngOnInit() {
+    this.ingredients = this.shoppingListService.getIngredients()
   }
 
-  addIngredientToList(data){
-    console.log(data.name + data.ammount)
-    this.ingredients.push(new Ingredient(data.name, data.ammount))
-  }
 
 }
