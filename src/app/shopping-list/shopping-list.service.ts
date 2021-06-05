@@ -3,6 +3,7 @@ import {Ingredient} from '../shared/ingredient.model'
 export class ShoppingListSerivce{
 
     ingredientsChanged = new EventEmitter<Ingredient []>()
+    
     private ingredients: Ingredient[] = [
         new Ingredient('Apples', 5),
         new Ingredient('Tomatoes', 10),
