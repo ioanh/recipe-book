@@ -10,6 +10,6 @@ export class RecipesService{
       ];
 
     getRecipes() {
-        return this.recipes
+        return this.recipes.slice()
     }
 }

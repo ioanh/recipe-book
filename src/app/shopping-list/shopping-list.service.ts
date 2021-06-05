@@ -6,7 +6,7 @@ export class ShoppingListSerivce{
       ];
 
     getIngredients(){
-        return this.ingredients
+        return this.ingredients.slice()
     }
 
     addIngredientToList(data){
