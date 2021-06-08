@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShoppingListSerivce } from 'src/app/shopping-list/shopping-list.service';
 import {Recipe} from '../recipe.model'
 import { RecipesService } from '../recipes.serivce';
 
@@ -9,7 +10,7 @@ import { RecipesService } from '../recipes.serivce';
 })
 export class RecipeDetailComponent implements OnInit {
 
-  constructor( private recipeService: RecipesService) { }
+  constructor( private recipeService: RecipesService, private shoppingListService: ShoppingListSerivce) { }
 
   recipe: Recipe;
 
@@ -19,6 +20,13 @@ export class RecipeDetailComponent implements OnInit {
         this.recipe = recipeRecieved
       }
     )
+  }
+
+  addToShoppingList(ingredients){
+    ingredients.forEach(element => {
+      this.shoppingListService.addIngredientToList(element);
+      console.log(element.amount)
+    });
   }
 
 
