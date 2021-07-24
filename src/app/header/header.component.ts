@@ -1,17 +1,19 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html'
 })
 export class HeaderComponent {
+  constructor(private router: Router) {}
   @Output('navClicked') navClicked = new EventEmitter <{typeClicked: string}>();
 
   GoToRecipes(){
-    this.navClicked.emit({typeClicked: 'recipesClicked'})
+    this.router.navigate(['/recipes'])
   }
   GoToShoppingList(){
-    this.navClicked.emit({typeClicked: 'shoppingListClicked'})
+    this.router.navigate(['/shopping-list'])
   }
 
 }

@@ -5,8 +5,8 @@ import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 
 const appRoutes: Routes = [
     {path: '', component: RecipesComponent},
-    {path: '/recipes', component: RecipesComponent},
-    {path: '/shopping-list', component: ShoppingListComponent}
+    {path: 'recipes', component: RecipesComponent},
+    {path: 'shopping-list', component: ShoppingListComponent}
 ]
 
 @NgModule({
