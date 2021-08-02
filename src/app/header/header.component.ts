@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   constructor(private router: Router) {}
-  @Output('navClicked') navClicked = new EventEmitter <{typeClicked: string}>();
 
   GoToRecipes(){
     this.router.navigate(['/recipes'])
