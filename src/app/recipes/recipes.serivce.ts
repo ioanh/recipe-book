@@ -15,7 +15,8 @@ export class RecipesService{
     }
 
     //TODO FUNCTIOn
-    getRecipe() {
-
+    getRecipe(id: number) {
+        const recipe = this.recipes[0]
+        return recipe;
     }
 }
