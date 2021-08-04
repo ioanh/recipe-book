@@ -20,6 +20,7 @@ export class RecipeItemComponent implements OnInit {
 
   recipeClicked(){
     this.recipesService.recipeSelected.emit(this.recipe);
+    console.log(this.recipesService.getRecipe(1))
   }
 
 }
