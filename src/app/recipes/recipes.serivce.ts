@@ -13,4 +13,9 @@ export class RecipesService{
     getRecipes() {
         return this.recipes.slice()
     }
+
+    //TODO FUNCTIOn
+    getRecipe() {
+
+    }
 }
