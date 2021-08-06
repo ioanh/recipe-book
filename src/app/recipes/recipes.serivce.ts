@@ -16,7 +16,7 @@ export class RecipesService{
 
     //TODO FUNCTIOn
     getRecipe(id: number) {
-        const recipe = this.recipes[0]
+        const recipe = this.recipes.find(recipe => recipe.id === id)
         return recipe;
     }
 }
