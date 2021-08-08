@@ -16,11 +16,7 @@ export class RecipeDetailComponent implements OnInit {
   recipe: Recipe;
 
   ngOnInit() {
-    this.recipeService.recipeSelected.subscribe(
-      (recipeRecieved) => {
-        this.recipe = recipeRecieved
-      }
-    )
+    this.recipe = this.recipeService.getRecipe(1)
   }
 
   //ADDING THE INGREDIENTS TO THE SHOPPING LIST COMPONENT WITH THE SHOPPING LIST SERVICE 
