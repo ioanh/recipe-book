@@ -3,6 +3,8 @@ import { ShoppingListSerivce } from 'src/app/shopping-list/shopping-list.service
 import {Recipe} from '../recipe.model'
 import { RecipesService } from '../recipes.serivce';
 import {Ingredient} from '../../shared/ingredient.model'
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -11,12 +13,16 @@ import {Ingredient} from '../../shared/ingredient.model'
 })
 export class RecipeDetailComponent implements OnInit {
 
-  constructor( private recipeService: RecipesService, private shoppingListService: ShoppingListSerivce) { }
+  constructor( private recipeService: RecipesService, private shoppingListService: ShoppingListSerivce, private currentRoute: ActivatedRoute) { }
 
   recipe: Recipe;
 
   ngOnInit() {
     this.recipe = this.recipeService.getRecipe(1)
+    console.log(this.currentRoute.snapshot.params['id'])
+    this.currentRoute.params.subscribe( params => {
+      console.log(params['id'])
+    })
   }
 
   //ADDING THE INGREDIENTS TO THE SHOPPING LIST COMPONENT WITH THE SHOPPING LIST SERVICE 

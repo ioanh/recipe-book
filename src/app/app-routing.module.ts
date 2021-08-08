@@ -8,7 +8,7 @@ import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
 const appRoutes: Routes = [
     {path: '', redirectTo: 'recipes', pathMatch: 'full'},
     {path: 'recipes', component: RecipesComponent, children: [
-        {path: ':id', component: RecipeItemComponent}
+        {path: ':id', component: RecipeDetailComponent},
     ]},
     {path: 'shopping-list', component: ShoppingListComponent}
 ]
