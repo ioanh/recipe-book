@@ -3,7 +3,7 @@ import { ShoppingListSerivce } from 'src/app/shopping-list/shopping-list.service
 import {Recipe} from '../recipe.model'
 import { RecipesService } from '../recipes.serivce';
 import {Ingredient} from '../../shared/ingredient.model'
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -17,10 +17,12 @@ export class RecipeDetailComponent implements OnInit {
 
   recipe: Recipe;
 
+  routerSub: Subscription;
+
   ngOnInit() {
     this.recipe = this.recipeService.getRecipe(1)
     console.log(this.currentRoute.snapshot.params['id'])
-    this.currentRoute.params.subscribe( params => {
+     this.routerSub = this.currentRoute.params.subscribe( (params: Params) => {
       console.log(params['id'])
     })
   }
