@@ -20,10 +20,11 @@ export class RecipeDetailComponent implements OnInit {
   routerSub: Subscription;
 
   ngOnInit() {
-    this.recipe = this.recipeService.getRecipe(1)
+    const id = +this.currentRoute.snapshot.params['id']
+    this.recipe = this.recipeService.getRecipe(id)
     console.log(this.currentRoute.snapshot.params['id'])
      this.routerSub = this.currentRoute.params.subscribe( (params: Params) => {
-      console.log(params['id'])
+      this.recipe = this.recipeService.getRecipe(+params['id'])
     })
   }
 
