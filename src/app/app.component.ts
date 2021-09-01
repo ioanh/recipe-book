@@ -7,17 +7,4 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
 
-  recipesSelected: boolean;
-  shoppingListSelected: boolean;
-
-  navClicked(typeClicked){
-    console.log(typeClicked.typeClicked === 'recipesClicked')
-    if(typeClicked.typeClicked === 'recipesClicked'){
-      this.recipesSelected = true;
-      this.shoppingListSelected = false;
-    }else{
-      this.recipesSelected = false;
-      this.shoppingListSelected = true;
-    }
-  }
 }
