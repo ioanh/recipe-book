@@ -16,11 +16,11 @@ export class ShoppingListSerivce{
     addIngredientToList(data: Ingredient){
         this.ingredients.push(new Ingredient(data.name, data.ammount))
         //Updating the listening components to the change in the Ingredient array 
-        this.ingredientsChanged.emit(this.ingredients.slice())
+        this.ingredientsChanged.next(this.ingredients.slice())
       }
 
     addIngredientsToList(data: Ingredient[]){
       this.ingredients.push(...data);
-      this.ingredientsChanged.emit(this.ingredients.slice())
+      this.ingredientsChanged.next(this.ingredients.slice())
     }
 }
